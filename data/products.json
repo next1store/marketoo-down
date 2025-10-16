@@ -1,38 +1,74 @@
 [
-  {
-    "id": 1,
-    "title": "سيروم طبيعي للبشرة",
-    "vendor": "Marketoo",
-    "price": 49.00,
-    "compare_at_price": 59.00,
-    "inventory": 12,
-    "low_stock_threshold": 3,
-    "collection": "beauty",
-    "image": "assets/images/product-1.jpg",
-    "description": "سيروم بتركيبة طبيعية يمنح ترطيبًا عميقًا وإشراقة صحية."
-  },
-  {
-    "id": 2,
-    "title": "خلاط مطبخ متعدد الوظائف",
-    "vendor": "Marketoo",
-    "price": 89.00,
-    "compare_at_price": null,
-    "inventory": 2,
-    "low_stock_threshold": 3,
-    "collection": "home",
-    "image": "assets/images/product-2.jpg",
-    "description": "خلاط قوي لتحضير العصائر والصلصات بسهولة."
-  },
-  {
-    "id": 3,
-    "title": "سماعات لاسلكية",
-    "vendor": "Marketoo",
-    "price": 129.00,
-    "compare_at_price": 149.00,
-    "inventory": 0,
-    "low_stock_threshold": 3,
-    "collection": "electronics",
-    "image": "assets/images/product-3.jpg",
-    "description": "صوت نقي وتصميم مريح مع وقت تشغيل طويل."
-  }
+    {
+        "id": "prod-001",
+        "title": "سيروم فيتامين C مضاد للأكسدة",
+        "vendor": "ماركة الجمال الطبيعي",
+        "price": 75.50,
+        "compare_at_price": 99.00,
+        "image": "assets/images/product-1.jpg",
+        "description": "سيروم قوي بفيتامين C نقي، يساعد على تفتيح البشرة وتقليل ظهور الخطوط الدقيقة. يستخدم صباحاً ومساءً.",
+        "collection": "skincare",
+        "inventory": 25,
+        "low_stock_threshold": 5
+    },
+    {
+        "id": "prod-002",
+        "title": "ساعة ذكية رياضية بشاشة AMOLED",
+        "vendor": "تكنولوجيا المستقبل",
+        "price": 450.00,
+        "compare_at_price": 0,
+        "image": "assets/images/product-2.jpg",
+        "description": "ساعة تدعم تتبع اللياقة البدنية ومراقبة معدل ضربات القلب والنوم. مقاومة للماء.",
+        "collection": "electronics",
+        "inventory": 15,
+        "low_stock_threshold": 4
+    },
+    {
+        "id": "prod-003",
+        "title": "مجموعة العناية بالقهوة والتقشير",
+        "vendor": "حرف يدوية",
+        "price": 120.00,
+        "compare_at_price": 150.00,
+        "image": "assets/images/product-3.jpg",
+        "description": "تشمل مقشراً للجسم وكريم ترطيب برائحة القهوة العضوية. مثالية للاسترخاء.",
+        "collection": "skincare",
+        "inventory": 0,
+        "low_stock_threshold": 3
+    },
+    {
+        "id": "prod-004",
+        "title": "كرسي مكتب مريح بمسند للرأس",
+        "vendor": "فرش مكاتب",
+        "price": 980.00,
+        "compare_at_price": 0,
+        "image": "assets/images/product-4.jpg",
+        "description": "كرسي بتصميم هندسي لدعم الظهر والرقبة، مثالي لساعات العمل الطويلة.",
+        "collection": "home-office",
+        "inventory": 8,
+        "low_stock_threshold": 2
+    },
+    {
+        "id": "prod-005",
+        "title": "منقي هواء ذكي بتقنية HEPA",
+        "vendor": "تكنولوجيا المستقبل",
+        "price": 620.90,
+        "compare_at_price": 0,
+        "image": "assets/images/product-5.jpg",
+        "description": "يقوم بتنقية الهواء من 99.97% من الجزيئات، مع تحكم عبر تطبيق الهاتف الذكي.",
+        "collection": "electronics",
+        "inventory": 3,
+        "low_stock_threshold": 1
+    },
+    {
+        "id": "prod-006",
+        "title": "كتاب 'أساسيات التجارة الإلكترونية'",
+        "vendor": "دار النشر المعاصرة",
+        "price": 55.00,
+        "compare_at_price": 0,
+        "image": "assets/images/product-6.jpg",
+        "description": "دليل شامل للمبتدئين لبدء وتنمية مشروعهم التجاري عبر الإنترنت.",
+        "collection": "books",
+        "inventory": 50,
+        "low_stock_threshold": 10
+    }
 ]

@@ -1,20 +1,26 @@
 [
-  {
-    "title": "العناية والجمال",
-    "handle": "beauty",
-    "image": "assets/images/collection-beauty.jpg",
-    "description": "منتجات مختارة للعناية الشخصية."
-  },
-  {
-    "title": "المنزل والمطبخ",
-    "handle": "home",
-    "image": "assets/images/collection-home.jpg",
-    "description": "أدوات ومنتجات للمنزل."
-  },
-  {
-    "title": "إلكترونيات",
-    "handle": "electronics",
-    "image": "assets/images/collection-electronics.jpg",
-    "description": "ملحقات وأجهزة تقنية."
-  }
+    {
+        "handle": "electronics",
+        "title": "الإلكترونيات والتقنية",
+        "description": "أحدث الأجهزة الذكية وملحقاتها المبتكرة.",
+        "image": "assets/images/collection-1.jpg"
+    },
+    {
+        "handle": "skincare",
+        "title": "العناية بالبشرة والجمال",
+        "description": "منتجات طبيعية وعضوية للعناية بالوجه والجسم.",
+        "image": "assets/images/collection-2.jpg"
+    },
+    {
+        "handle": "home-office",
+        "title": "المنزل والمكتب",
+        "description": "أثاث وإكسسوارات لبيئة عمل مريحة ومنتجة.",
+        "image": "assets/images/collection-3.jpg"
+    },
+    {
+        "handle": "books",
+        "title": "الكتب والمطبوعات",
+        "description": "أفضل الكتب في مجالات التجارة والأعمال.",
+        "image": "assets/images/collection-4.jpg"
+    }
 ]

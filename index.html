@@ -1,171 +1,285 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Marketoo — متجر إلكتروني</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketoo - متجر إلكتروني عربي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <a href="#mainContent" class="skip-link">تخطي إلى المحتوى</a>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#">Marketoo</a>
-      <nav class="nav">
-        <a href="#collections">المجموعات</a>
-        <a href="#products">المنتجات</a>
-        <a href="#contact">تواصل معنا</a>
-      </nav>
-      <div class="header-actions">
-        <label class="currency-switch">
-          <span>العملة:</span>
-          <select id="currencySelect">
-            <option value="LYD" selected>LYD</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-          </select>
-        </label>
-        <button class="btn icon-btn" id="searchToggle" aria-label="بحث">🔎</button>
-        <button class="btn icon-btn" id="cartToggle" aria-label="سلة المشتريات">🛒 <span class="badge" id="cartCount">0</span></button>
-      </div>
-    </div>
-    <div class="search-bar" id="searchBar">
-      <input type="search" id="searchInput" placeholder="ابحث عن منتج..." />
-      <button class="btn" id="searchClear">مسح</button>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <div class="hero-copy">
-        <h1>تسوق منتجات مختارة بعناية</h1>
-        <p>جودة عالية، تجربة سلسة، وخدمة موثوقة.</p>
-        <a href="#products" class="btn btn-primary">تسوق الآن</a>
-      </div>
-      <div class="hero-media">
-        <img src="assets/images/hero.jpg" alt="عروض Marketoo" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Collections -->
-  <section class="section" id="collections">
-    <div class="container">
-      <div class="section-header">
-        <h2>المجموعات</h2>
-        <div class="filters">
-          <label class="select">
-            <span>ترتيب حسب:</span>
-            <select id="sortCollections">
-              <option value="default">افتراضي</option>
-              <option value="alpha">أبجدي</option>
-            </select>
-          </label>
+    <header class="site-header">
+        <div class="header-inner container">
+            <a href="#" class="brand">Marketoo</a>
+            <nav class="nav">
+                <a href="#collections">المجموعات</a>
+                <a href="#products">المنتجات</a>
+                <a href="#about">من نحن</a>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchToggle" aria-label="بحث">🔍</button>
+                <button class="icon-btn" id="accountToggle" aria-label="حسابي">👤</button>
+                <button class="icon-btn" id="cartToggle" aria-label="السلة">🛒
+                    <span class="badge" id="cartCount">0</span>
+                </button>
+                </div>
         </div>
-      </div>
-      <div class="grid grid-3" id="collectionsGrid"></div>
-    </div>
-  </section>
-
-  <!-- Products -->
-  <section class="section" id="products">
-    <div class="container">
-      <div class="section-header">
-        <h2>المنتجات</h2>
-        <div class="filters">
-          <label class="select">
-            <span>الترتيب:</span>
-            <select id="sortProducts">
-              <option value="featured">مختار</option>
-              <option value="price-asc">السعر: الأقل → الأعلى</option>
-              <option value="price-desc">السعر: الأعلى → الأقل</option>
-              <option value="alpha">أبجدي</option>
-            </select>
-          </label>
-          <label class="select">
-            <span>تصنيف:</span>
-            <select id="filterCollection">
-              <option value="all">الكل</option>
-            </select>
-          </label>
+        <div class="search-bar" id="searchBar" role="search">
+            <input type="text" id="searchInput" placeholder="ابحث عن منتج..." aria-label="إدخال البحث">
+            <button class="icon-btn" id="searchClear" aria-label="مسح البحث">✖</button>
         </div>
-      </div>
-      <div class="grid grid-4" id="productsGrid"></div>
-      <div class="pagination" id="pagination"></div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Footer -->
-  <footer class="site-footer" id="contact">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <h4>عن Marketoo</h4>
-        <p>نقدّم تجربة تسوق راقية بمنتجات مختارة، ودعم عملاء موثوق.</p>
-      </div>
-      <div class="footer-col">
-        <h4>روابط</h4>
-        <ul>
-          <li><a href="#collections">المجموعات</a></li>
-          <li><a href="#products">المنتجات</a></li>
-          <li><a href="#contact">تواصل معنا</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>النشرة البريدية</h4>
-        <form id="newsletterForm">
-          <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
-          <button class="btn btn-primary" type="submit">اشترك</button>
-        </form>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <p>© 2025 Marketoo. جميع الحقوق محفوظة.</p>
-    </div>
-  </footer>
+    <main id="mainContent">
 
-  <!-- Cart drawer -->
-  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
-    <div class="cart-header">
-      <h3>سلة المشتريات</h3>
-      <button class="icon-btn" id="cartClose">✕</button>
-    </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-summary">
-        <span>المجموع:</span>
-        <strong id="cartTotal">0.00</strong>
-      </div>
-      <button class="btn btn-primary" id="checkoutBtn">إتمام الشراء</button>
-    </div>
-  </aside>
-  <div class="backdrop" id="backdrop"></div>
+        <section class="hero">
+            <div class="hero-inner container">
+                <div class="hero-copy">
+                    <h1>تسوّق بذكاء، اختر Marketoo</h1>
+                    <p>أحدث المنتجات بجودة عالية وأسعار لا تُنافس، مع توصيل سريع لجميع أنحاء البلاد.</p>
+                    <a href="#products" class="btn btn-primary">اكتشف الآن</a>
+                </div>
+                <div class="hero-media">
+                    <img src="assets/images/product-4.jpg" alt="سيروم للبشرة وقهوة" loading="lazy">
+                </div>
+            </div>
+        </section>
 
-  <!-- Quick view modal -->
-  <div class="modal" id="quickView" aria-hidden="true">
-    <div class="modal-content">
-      <button class="icon-btn modal-close" id="quickViewClose">✕</button>
-      <div class="modal-grid">
-        <div class="modal-media"><img id="qvImage" alt="" /></div>
-        <div class="modal-info">
-          <h3 id="qvTitle"></h3>
-          <p class="price">
-            <span id="qvPrice"></span>
-            <span class="compare" id="qvCompare"></span>
-            <span class="badge badge-sale" id="qvBadge" style="display:none;">عرض خاص</span>
-          </p>
-          <p id="qvDesc"></p>
-          <div class="qty">
-            <label for="qvQty">الكمية</label>
-            <input type="number" id="qvQty" min="1" value="1" />
-          </div>
-          <button class="btn btn-primary" id="qvAdd">أضف إلى السلة</button>
+        <section class="section" id="collections">
+            <div class="container">
+                <div class="section-header">
+                    <h2>مجموعات المتجر</h2>
+                    <div class="filters">
+                        <div class="select">
+                            <label for="sortCollections">ترتيب:</label>
+                            <select id="sortCollections" aria-label="ترتيب المجموعات">
+                                <option value="featured">الأكثر مشاهدة</option>
+                                <option value="alpha">أبجدياً</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-3" id="collectionsGrid"></div>
+            </div>
+        </section>
+
+        <section class="section" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <h2>جميع المنتجات</h2>
+                    <div class="filters">
+                        <div class="select">
+                            <label for="filterCollection">تصنيف:</label>
+                            <select id="filterCollection" aria-label="تصفية حسب التصنيف">
+                                <option value="all">الكل</option>
+                                </select>
+                        </div>
+                        <div class="select">
+                            <label for="sortProducts">ترتيب:</label>
+                            <select id="sortProducts" aria-label="ترتيب المنتجات">
+                                <option value="featured">الأفضل</option>
+                                <option value="price-asc">الأقل سعراً</option>
+                                <option value="price-desc">الأعلى سعراً</option>
+                                <option value="alpha">أبجدياً</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-4" id="productsGrid"></div>
+                <div class="pagination" id="pagination" role="navigation" aria-label="ترقيم الصفحات"></div>
+            </div>
+        </section>
+
+        <section class="section" id="recentlyViewedSection" style="display:none;">
+            <div class="container">
+                <h3>شاهدتها مؤخراً</h3>
+                <div class="grid grid-4" id="recentlyViewedGrid">
+                    </div>
+            </div>
+        </section>
+
+        <section class="section" id="about">
+            <div class="container">
+                <h2>قيمنا في Marketoo</h2>
+                <p>نحن نؤمن بالشفافية والابتكار، ونسعى لتقديم تجربة تسوق سريعة وبسيطة لعملائنا في جميع أنحاء البلاد.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner container">
+            <div class="footer-col">
+                <h4>Marketoo</h4>
+                <p class="muted">بوابتك للتسوق الذكي. نعدك بمنتجات عالية الجودة وخدمة عملاء ممتازة.</p>
+            </div>
+            <div class="footer-col">
+                <h4>روابط سريعة</h4>
+                <ul>
+                    <li><a href="#about">من نحن</a></li>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>خدمة العملاء</h4>
+                <ul>
+                    <li><a href="#">اتصل بنا</a></li>
+                    <li><a href="#">الأسئلة الشائعة</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Marketoo. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </footer>
 
-  <script src="assets/script.js"></script>
+    <div class="toast" id="accountToast" role="alert" aria-live="assertive"></div>
+
+    <div class="cart-drawer" id="cartDrawer" aria-modal="true" role="dialog" aria-labelledby="cartHeader">
+        <div class="cart-header">
+            <h3 id="cartHeader">سلة المشتريات (<span id="cartCountHeader">0</span>)</h3>
+            <button class="icon-btn" id="cartClose" aria-label="إغلاق السلة">✖</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            </div>
+        <div class="cart-footer">
+            <div class="cart-summary">
+                <label for="paymentMethodRadios">طريقة الدفع:</label>
+                <div id="paymentMethodRadios">
+                    <input type="radio" name="paymentMethod" value="cod" id="radioCod" checked>
+                    <label for="radioCod">الدفع عند الاستلام</label><br>
+                    <input type="radio" name="paymentMethod" value="bank" id="radioBank">
+                    <label for="radioBank">حوالة بنكية (خصم 10%)</label>
+                </div>
+            </div>
+            <div class="cart-summary">
+                <span>الإجمالي الفرعي:</span>
+                <span id="cartSubtotal">0.00 د.ل</span>
+            </div>
+            <div class="cart-summary" id="discountRow" style="display:none;">
+                <span>الخصم (10%):</span>
+                <span id="cartDiscount">0.00 د.ل</span>
+            </div>
+            <div class="cart-summary" style="font-weight: bold;">
+                <span>المجموع الكلي:</span>
+                <span id="cartTotal">0.00 د.ل</span>
+            </div>
+            <button class="btn btn-primary" id="checkoutBtn" disabled>إتمام الشراء</button>
+        </div>
+    </div>
+
+    <div class="modal" id="quickView" aria-modal="true" role="dialog" aria-labelledby="qvTitle">
+        <div class="modal-content">
+            <button class="icon-btn modal-close" id="quickViewClose" aria-label="إغلاق المعاينة">✖</button>
+            <div class="modal-grid">
+                <div class="modal-media">
+                    <img id="qvImage" src="" alt="" loading="lazy">
+                </div>
+                <div class="modal-info">
+                    <h3 id="qvTitle"></h3>
+                    <div class="price">
+                        <span id="qvPrice" style="font-size:1.4rem;"></span>
+                        <span id="qvCompare" class="compare"></span>
+                        <span class="badge-sale" id="qvBadge">عرض خاص</span>
+                    </div>
+                    <p id="qvDesc"></p>
+
+                    <div style="margin-top: 15px;">
+                        <label for="qvQty">الكمية:</label>
+                        <input type="number" id="qvQty" value="1" min="1" style="width: 70px; padding: 5px; border: 1px solid var(--border); border-radius: 4px;">
+                    </div>
+                    <button class="btn btn-primary" id="qvAdd" style="margin-top: 10px;">أضف إلى السلة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="accountModal" aria-modal="true" role="dialog" aria-labelledby="accountModalHeader">
+        <div class="modal-content" style="max-width: 450px;">
+            <button class="icon-btn modal-close" id="accountClose" aria-label="إغلاق النافذة">✖</button>
+            <div class="tabs" role="tablist">
+                <button class="tab active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel">تسجيل الدخول</button>
+                <button class="tab" id="registerTab" role="tab" aria-selected="false" aria-controls="registerPanel">إنشاء حساب</button>
+                <button class="tab" id="resetTab" role="tab" aria-selected="false" aria-controls="resetPanel" style="display:none;">استعادة</button>
+            </div>
+            <div class="panels">
+                <section id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+                    <form id="loginForm">
+                        <label for="loginEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="loginEmail" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+                        <label for="loginPassword">كلمة المرور:</label>
+                        <input type="password" id="loginPassword" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">تسجيل الدخول</button>
+                        <p style="text-align: center; margin-top: 10px;"><a href="#" id="goResetFromLogin">نسيت كلمة المرور؟</a></p>
+                    </form>
+                </section>
+                <section id="registerPanel" role="tabpanel" aria-labelledby="registerTab" hidden>
+                    <form id="registerForm">
+                        <label for="registerName">الاسم الكامل:</label>
+                        <input type="text" id="registerName" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+                        <label for="registerEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="registerEmail" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+                        <label for="registerPassword">كلمة المرور:</label>
+                        <input type="password" id="registerPassword" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">إنشاء حساب</button>
+                    </form>
+                </section>
+                <section id="resetPanel" role="tabpanel" aria-labelledby="resetTab" hidden>
+                    <form id="resetForm">
+                        <p>أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور.</p>
+                        <label for="resetEmail">البريد الإلكتروني:</label>
+                        <input type="email" id="resetEmail" required style="width: 100%; padding: 8px; margin-bottom: 15px; border: 1px solid var(--border); border-radius: 4px;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">استعادة كلمة المرور</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="checkoutModal" aria-modal="true" role="dialog" aria-labelledby="checkoutModalHeader">
+        <div class="modal-content" style="max-width: 600px;">
+            <button class="icon-btn modal-close" id="checkoutClose" aria-label="إغلاق النافذة">✖</button>
+            <h3 id="checkoutModalHeader">تأكيد بيانات الشحن</h3>
+            <p id="checkoutSummaryText" style="font-weight: bold; color: var(--brand);"></p>
+            <hr>
+
+            <form id="shippingForm" style="margin-top: 15px;">
+                <label for="shipName">الاسم الكامل: *</label>
+                <input type="text" id="shipName" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+
+                <label for="shipPhone">رقم الهاتف: *</label>
+                <input type="tel" id="shipPhone" required pattern="[0-9]{8,}" title="يجب أن يتكون من 8 أرقام على الأقل" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+
+                <label for="shipCity">المدينة: *</label>
+                <select id="shipCity" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;">
+                    <option value="">اختر المدينة</option>
+                    <option value="طرابلس">طرابلس</option>
+                    <option value="بنغازي">بنغازي</option>
+                    <option value="مصراتة">مصراتة</option>
+                    <option value="الزاوية">الزاوية</option>
+                </select>
+
+                <label for="shipAddress">العنوان التفصيلي: *</label>
+                <textarea id="shipAddress" required style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid var(--border); border-radius: 4px;"></textarea>
+
+                <label for="shipNotes">ملاحظات إضافية (اختياري):</label>
+                <textarea id="shipNotes" style="width: 100%; padding: 8px; margin-bottom: 20px; border: 1px solid var(--border); border-radius: 4px;"></textarea>
+
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" class="btn btn-primary" id="confirmOrder" style="flex: 1;">تأكيد الطلب</button>
+                    <button type="button" class="btn" id="sendWhatsApp" style="flex: 1; background: #25D366; color: white;">إرسال عبر WhatsApp</button>
+                </div>
+                <button type="button" class="btn" id="backToCart" style="width: 100%; margin-top: 10px;">العودة إلى السلة</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
