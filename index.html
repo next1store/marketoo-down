@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketoo — متجر إلكتروني</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">Marketoo</a>
+      <nav class="nav">
+        <a href="#collections">المجموعات</a>
+        <a href="#products">المنتجات</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+      <div class="header-actions">
+        <label class="currency-switch">
+          <span>العملة:</span>
+          <select id="currencySelect">
+            <option value="LYD" selected>LYD</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+          </select>
+        </label>
+        <button class="btn icon-btn" id="searchToggle" aria-label="بحث">🔎</button>
+        <button class="btn icon-btn" id="cartToggle" aria-label="سلة المشتريات">🛒 <span class="badge" id="cartCount">0</span></button>
+      </div>
+    </div>
+    <div class="search-bar" id="searchBar">
+      <input type="search" id="searchInput" placeholder="ابحث عن منتج..." />
+      <button class="btn" id="searchClear">مسح</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>تسوق منتجات مختارة بعناية</h1>
+        <p>جودة عالية، تجربة سلسة، وخدمة موثوقة.</p>
+        <a href="#products" class="btn btn-primary">تسوق الآن</a>
+      </div>
+      <div class="hero-media">
+        <img src="assets/images/hero.jpg" alt="عروض Marketoo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Collections -->
+  <section class="section" id="collections">
+    <div class="container">
+      <div class="section-header">
+        <h2>المجموعات</h2>
+        <div class="filters">
+          <label class="select">
+            <span>ترتيب حسب:</span>
+            <select id="sortCollections">
+              <option value="default">افتراضي</option>
+              <option value="alpha">أبجدي</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="grid grid-3" id="collectionsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-header">
+        <h2>المنتجات</h2>
+        <div class="filters">
+          <label class="select">
+            <span>الترتيب:</span>
+            <select id="sortProducts">
+              <option value="featured">مختار</option>
+              <option value="price-asc">السعر: الأقل → الأعلى</option>
+              <option value="price-desc">السعر: الأعلى → الأقل</option>
+              <option value="alpha">أبجدي</option>
+            </select>
+          </label>
+          <label class="select">
+            <span>تصنيف:</span>
+            <select id="filterCollection">
+              <option value="all">الكل</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="grid grid-4" id="productsGrid"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h4>عن Marketoo</h4>
+        <p>نقدّم تجربة تسوق راقية بمنتجات مختارة، ودعم عملاء موثوق.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط</h4>
+        <ul>
+          <li><a href="#collections">المجموعات</a></li>
+          <li><a href="#products">المنتجات</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>النشرة البريدية</h4>
+        <form id="newsletterForm">
+          <input type="email" placeholder="أدخل بريدك الإلكتروني" required />
+          <button class="btn btn-primary" type="submit">اشترك</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2025 Marketoo. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>سلة المشتريات</h3>
+      <button class="icon-btn" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-summary">
+        <span>المجموع:</span>
+        <strong id="cartTotal">0.00</strong>
+      </div>
+      <button class="btn btn-primary" id="checkoutBtn">إتمام الشراء</button>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop"></div>
+
+  <!-- Quick view modal -->
+  <div class="modal" id="quickView" aria-hidden="true">
+    <div class="modal-content">
+      <button class="icon-btn modal-close" id="quickViewClose">✕</button>
+      <div class="modal-grid">
+        <div class="modal-media"><img id="qvImage" alt="" /></div>
+        <div class="modal-info">
+          <h3 id="qvTitle"></h3>
+          <p class="price">
+            <span id="qvPrice"></span>
+            <span class="compare" id="qvCompare"></span>
+            <span class="badge badge-sale" id="qvBadge" style="display:none;">عرض خاص</span>
+          </p>
+          <p id="qvDesc"></p>
+          <div class="qty">
+            <label for="qvQty">الكمية</label>
+            <input type="number" id="qvQty" min="1" value="1" />
+          </div>
+          <button class="btn btn-primary" id="qvAdd">أضف إلى السلة</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

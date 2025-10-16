@@ -1,0 +1,20 @@
+[
+  {
+    "title": "العناية والجمال",
+    "handle": "beauty",
+    "image": "assets/images/collection-beauty.jpg",
+    "description": "منتجات مختارة للعناية الشخصية."
+  },
+  {
+    "title": "المنزل والمطبخ",
+    "handle": "home",
+    "image": "assets/images/collection-home.jpg",
+    "description": "أدوات ومنتجات للمنزل."
+  },
+  {
+    "title": "إلكترونيات",
+    "handle": "electronics",
+    "image": "assets/images/collection-electronics.jpg",
+    "description": "ملحقات وأجهزة تقنية."
+  }
+]
